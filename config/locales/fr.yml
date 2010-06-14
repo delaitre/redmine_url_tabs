@@ -1,0 +1,18 @@
+# French strings go here for Rails i18n
+fr:
+    project_module_url_tab: "Onglets URL"
+    permission_view_url_tab: "Voir les onglets URL"
+    permission_manage_url_tab: "Gérer les onglets URL"
+    url_tab_project_settings_tab: "Onglets URL"
+    url_tab_setting_name_label: "Nom de l'onglet"
+    url_tab_setting_url_label: "URL"
+    url_tab_setting_css_class_label: "Classe CSS"
+    url_tab_setting_no_tab_msg: "Il n'y a aucun onglet URL pour ce projet."
+    url_tab_setting_delete_label: "Supprimer"
+    url_tab_setting_add_label: "Ajouter"
+    url_tab_setting_new_label: "Nouvel onglet"
+    url_tab_setting_error_empty_name: "Le nom de l'onglet est vide."
+    url_tab_setting_error_invalid_uri: "L'URL n'est pas valide."
+    url_tab_setting_error_could_not_add: "Échec lors de l'ajout du nouvel onglet."
+    url_tab_setting_error_could_not_delete: "Échec lors de la suppression de l'onglet."
+

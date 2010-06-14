@@ -1,0 +1,60 @@
+<div id="url-tab-settings">
+    <div class="autoscroll">
+        <table class="list">
+            <thead>
+                <tr>
+                    <th class="name"><%= l(:url_tab_setting_name_label) %></th>
+                    <th class="url"><%= l(:url_tab_setting_url_label) %></th>
+                    <th class="css_class"><%= l(:url_tab_setting_css_class_label) %></th>
+                    <th class="buttons"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% links = UrlTab.find(:all, :conditions => { :project_id => @project.id }) %>
+                <% if links.empty? %>
+                    <tr class="odd">
+                        <td class="msg" colspan="3"><%= l(:url_tab_setting_no_tab_msg) %></td>
+                    </tr>
+                <% else %>
+                    <% links.each do |link| %>
+                        <tr class="<%=cycle('odd', 'even') %>">
+                            <td class="name"><%= link.name %></td>
+                            <td class="url"><%= link.url %></td>
+                            <td class="css_class"><%= link.css_class %></td>
+                            <td class="buttons">
+                                <%= link_to l(:url_tab_setting_delete_label),
+                                    { :controller => 'url_tabs', :action => 'delete', :project_id => @project.id, :link_id => link.id },
+                                    :class => 'icon icon-del'
+                                %>
+                            </td>
+                        </tr>
+                    <% end %>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+    <div class="tabular">
+        <% form_tag({ :controller => 'url_tabs', :action => 'add' }) do %>
+            <fieldset>
+                <legend style="font-weight: bold;"><%= l(:url_tab_setting_new_label) %></legend>
+                <p>
+                <%= hidden_field_tag 'project_id', @project.id.to_s %>
+                <%= label_tag 'name', l(:url_tab_setting_name_label) + content_tag(:span, ' *', :class => 'required') %>
+                <%= text_field_tag 'name', nil, { :size => 16 } %>
+                </p>
+                <p>
+                <%= label_tag 'url', l(:url_tab_setting_url_label) + content_tag(:span, ' *', :class => 'required') %>
+                <%= text_field_tag 'url', nil, { :size => 50 } %>
+                </p>
+                <p>
+                <%= label_tag 'css_class', l(:url_tab_setting_css_class_label) %>
+                <%= text_field_tag 'css_class', nil, { :size => 16 } %>
+                </p>
+                <p>
+                <%= submit_tag l(:url_tab_setting_add_label) %>
+                </p>
+            </fieldset>
+        <% end %>
+    </div>
+</div>
+

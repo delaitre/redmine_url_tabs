@@ -1,0 +1,37 @@
+= Redmine Url Tabs plugin
+
+Url Tabs is a Redmine plugin which allows to add multiple tabs associated to custom
+urls on a per-project basis.
+The urls are not embedded into the page, they are treated like standard link.
+
+== Features
+
+* Per-project settings
+* Multiple tabs
+
+== Getting the plugin
+
+The newest version is always at {GitHub}[http://github.com/delaitre/redmine_url_tabs].
+
+== Install
+
+1. Follow the Redmine plugin installation steps at: http://www.redmine.org/wiki/redmine/Plugins Make
+sure the plugin is installed to +vendor/plugins/redmine_url_tabs+
+2. Setup the database using the migrations. +rake db:migrate_plugins+
+3. Login to your Redmine install as an Administrator
+4. Setup the 'manage url tabs' permissions for your roles
+5. Add "Url Tabs" to the enabled modules for your project
+
+== Usage
+
+Users with the 'manage url tabs' permission can add/remove tabs from the 'Url Tabs' tab of each project
+settings page.
+The configured tabs will appears in the related project menu.
+
+== Upgrade
+
+=== Git
+
+1. Open a shell to your Redmine's vendor/plugins/redmine_url_tabs folder
+2. Update your git copy with +git pull+
+3. Restart your Redmine

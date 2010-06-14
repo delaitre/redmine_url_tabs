@@ -1,0 +1,18 @@
+# English strings go here for Rails i18n
+en:
+    project_module_url_tab: "Url tabs"
+    permission_view_url_tab: "View url tabs"
+    permission_manage_url_tab: "Manage url tabs"
+    url_tab_project_settings_tab: "Url Tabs"
+    url_tab_setting_name_label: "Tab name"
+    url_tab_setting_url_label: "Url"
+    url_tab_setting_css_class_label: "CSS class"
+    url_tab_setting_no_tab_msg: "There is no url tab for this project."
+    url_tab_setting_delete_label: "Delete"
+    url_tab_setting_add_label: "Add"
+    url_tab_setting_new_label: "New tab"
+    url_tab_setting_error_empty_name: "The tab name is empty."
+    url_tab_setting_error_invalid_uri: "The URL is not valid."
+    url_tab_setting_error_could_not_add: "Fail to add the new tab."
+    url_tab_setting_error_could_not_delete: "Fail to delete the tab."
+
